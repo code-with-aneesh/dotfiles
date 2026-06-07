@@ -1,0 +1,133 @@
+// -*- mode: jsonc -*-
+{
+  // General Waybar settings
+  "height": 38,      // Bar height
+  "spacing": 4,      // Spacing between modules
+
+  // Define module positions
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "battery",
+    "tray",
+    "custom/hyprpaper-next",
+    "custom/power"
+  ],
+
+  // --- Module Configurations --- //
+
+  // Workspaces for Hyprland
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "urgent": "!",
+      "focused": "●",
+      "default": "○"
+    }
+  },
+
+  // Active window title
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35
+  },
+
+  // Clock module
+  "clock": {
+    "format": "{:%a %d, %I:%M %p}", // e.g., Sun 05, 11:50 AM
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  // Audio control
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  },
+
+  // Network information
+  "network": {
+    "format-wifi": "{essid} ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "nmtui"
+  },
+
+  // CPU usage
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+
+  // Memory usage
+  "memory": {
+    "format": "{}% ", // Shows percentage of memory used
+    "interval": 5
+  },
+
+  // Battery status
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  // System tray
+  "tray": {
+    "spacing": 10
+  },
+
+  // Hyprpaper: random next wallpaper button
+  "custom/hyprpaper-next": {
+    "format": "󰸉 ",
+    "tooltip": "Change wallpaper",
+    "on-click": "/home/aneesh/.config/waybar/scripts/hyprpaper-random-next.sh"
+  },
+
+  // Custom power menu button
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown now",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Stow deployment can create symlinks in the home directory; keep the repo clean.
+*.swp
+*.swo
+*~

@@ -1,0 +1,250 @@
+/*
+ * Catppuccin Mocha Theme for Waybar
+ *
+ * Maintainer: Gemini
+ *
+ */
+
+/* --- Global --- */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font";
+    font-weight: 500;
+    font-size: 13px;
+    min-height: 0;
+}
+
+/* --- Colors --- */
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+/* --- Bar --- */
+window#waybar {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: @text;
+    transition-property: background-color;
+    transition-duration: .5s;
+    box-shadow: none;
+    padding: 2px 0;
+    margin: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* --- Tooltips --- */
+tooltip {
+    background: @mantle;
+    border: 1px solid @surface1;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @text;
+}
+
+/* --- Modules --- */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 2px 0;
+}
+
+#workspaces,
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#custom-power,
+#custom-hyprpaper-next,
+#window {
+    padding: 2px 12px;
+    margin: 4px 0px;
+    background-color: transparent;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    background: @surface0;
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+#workspaces button {
+    color: @overlay1;
+    border-radius: 8px;
+    padding: 0px 5px;
+    border: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @text;
+    background: @surface1;
+}
+
+#workspaces button.focused {
+    color: @base;
+    background: @blue;
+    box-shadow: 0 0 5px @blue;
+}
+
+#workspaces button.active {
+    color: @base;
+    background: @blue;
+    box-shadow: 0 0 7px 2px alpha(@blue, 0.45);
+    border: 2px solid alpha(@blue, 0.7);
+}
+
+#workspaces button.urgent {
+    color: @base;
+    background-color: @red;
+}
+
+/* --- Window Title --- */
+#window {
+    color: @subtext1;
+    margin-left: 10px;
+}
+
+/* --- Clock --- */
+#clock {
+    color: @mauve;
+    background: @surface0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* --- System Modules (Right) --- */
+.modules-right > * {
+    margin: 4px 0;
+}
+
+/* Grouped modules */
+#pulseaudio, #network, #cpu, #memory, #battery {
+    color: @text;
+    background: @surface0;
+}
+#pulseaudio { border-radius: 10px 0 0 10px; padding-left: 12px; border-right: 1px solid @mantle;}
+#network { border-radius: 0; border-right: 1px solid @mantle; }
+#cpu { border-radius: 0; border-right: 1px solid @mantle; }
+#memory { border-radius: 0; border-right: 1px solid @mantle; }
+#battery { border-radius: 0 10px 10px 0; padding-right: 12px; }
+
+/* --- Audio --- */
+#pulseaudio { color: @yellow; }
+#pulseaudio.muted { color: @overlay0; }
+
+/* --- Network --- */
+#network { color: @sky; }
+#network.disconnected { color: @red; }
+
+/* --- CPU --- */
+#cpu { color: @green; }
+
+/* --- Memory --- */
+#memory { color: @lavender; }
+
+/* --- Battery --- */
+#battery { color: @green; }
+#battery.charging, 
+#battery.plugged { color: @teal; }
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 1.5s ease-in-out infinite;
+}
+@keyframes blink { 50% { color: @base; } }
+
+/* --- Tray --- */
+#tray {
+    background: @surface0;
+    border-radius: 10px;
+    margin-left: 8px;
+    padding: 2px 10px;
+}
+
+/* --- Power Menu --- */
+
+#custom-hyprpaper-next {
+    color: @blue;
+    background: transparent;
+    border-radius: 0;
+    margin: 0 0 0 8px;
+    padding: 2px 10px;
+    transition: color 0.2s;
+}
+#custom-hyprpaper-next:hover {
+    color: @mauve;
+    background: @surface1;
+    border-radius: 8px;
+}
+#custom-power {
+    color: @red;
+    background: transparent;
+    border-radius: 0;
+    margin: 0 8px 0 0;
+    padding: 2px 10px;
+}
+
+/* --- GTK Menu (for power menu) --- */
+menu {
+    background-color: @mantle;
+    border: 1px solid @surface1;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    margin-top: 38px; /* Adjust to your bar's height if needed */
+}
+
+menuitem {
+    color: @text;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+menuitem:hover {
+    color: @base;
+}
+
+#shutdown:hover { background-color: @red; }
+#reboot:hover { background-color: @peach; }
+#suspend:hover { background-color: @yellow; }
+#hibernate:hover { background-color: @green; }
