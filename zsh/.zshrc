@@ -136,3 +136,7 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.local/bin/env"
 alias ce='code . && exit'
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/aneesh/.local/bin:$PATH"
