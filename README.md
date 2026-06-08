@@ -8,6 +8,7 @@ This repo uses GNU Stow to manage Hyprland config.
 - `kitty/.config/kitty/` maps to `~/.config/kitty/`
 - `waybar/.config/waybar/` maps to `~/.config/waybar/`
 - `rofi/.config/rofi/` maps to `~/.config/rofi/`
+- `ghostty/.config/ghostty/` maps to `~/.config/ghostty/`
 - `zsh/.zshrc` maps to `~/.zshrc`
 - `zsh/.p10k.zsh` maps to `~/.p10k.zsh`
 
@@ -20,6 +21,7 @@ stow -d ~/Dotfiles -t ~ hypr
 stow -d ~/Dotfiles -t ~ kitty
 stow -d ~/Dotfiles -t ~ waybar
 stow -d ~/Dotfiles -t ~ rofi
+stow -d ~/Dotfiles -t ~ ghostty
 stow -d ~/Dotfiles -t ~ zsh
 ```
 
