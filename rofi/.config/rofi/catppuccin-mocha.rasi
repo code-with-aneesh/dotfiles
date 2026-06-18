@@ -1,0 +1,144 @@
+/*
+ * Catppuccin Mocha colorscheme (big icons) for rofi
+ * Adapted for Hyprland without border coloring
+ *
+ * Corrected by Gemini
+ * Hover/Selected color changed from Orange to Lavender
+ */
+
+configuration {
+    font: "Monospace 11";
+}
+
+* {
+    /* Variables */
+    bg:          #1E1E2E;
+    ug:          #302D41; /* Urgent/Subtle background */
+    primary:     #C6D0F5;
+    kl:          #89B4FA; /* Accent color (still blue) */
+    hv:          #B4BEFE; /* Hover/Selected background (Lavender) */
+    black:       #11111B; /* Using Catppuccin's "Crust" for black is better than #000 */
+    transparent: rgba(30, 30, 46, 0);
+
+    /* Global properties */
+    background-color: @transparent;
+    text-color:       @primary;
+}
+
+window {
+    width:          700px;
+    orientation:    horizontal;
+    location:       center;
+    anchor:         center;
+    border:         0px;
+    border-radius:  0px; /* Hyprland handles rounding */
+    spacing:        0px;
+    children:       [ mainbox ];
+}
+
+mainbox {
+    background-color: @bg;
+    spacing:          0px;
+    children:         [ inputbar, listview ];
+}
+
+inputbar {
+    text-color:       @kl;
+    padding:          11px;
+    background-color: @ug;
+    border-radius:    0px;
+    children:         [ prompt, entry, case-indicator ];
+}
+
+prompt, case-indicator {
+    font:       inherit;
+    text-color: inherit;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+entry {
+    font:       inherit;
+    text-color: @primary;
+    cursor:     text;
+}
+
+listview {
+    layout:           vertical;
+    padding:          8px;
+    lines:            7;
+    columns:          1;
+    background-color: @bg;
+    border-radius:    0px;
+    dynamic:          false;
+}
+
+element {
+    padding:       2px;
+    text-color:    @kl;
+    font:          inherit;
+    border-radius: 4px; /* Slight rounding for internal elements looks nice */
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    padding:          4px 8px; /* Added padding for better spacing */
+}
+
+element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+    size:             2.5em;
+    padding:          0px 4px 0px 0px; /* Add some space between icon and text */
+}
+
+element.normal.normal {
+    background-color: @bg;
+    text-color:       @kl;
+}
+
+element.normal.urgent {
+    background-color: @ug;
+    text-color:       @primary;
+}
+
+element.normal.active {
+    background-color: @hv;
+    text-color:       @black;
+}
+
+element.selected.normal {
+    background-color: @hv;
+    text-color:       @black;
+}
+
+element.selected.urgent {
+    background-color: @ug;
+    text-color:       @primary;
+}
+
+element.selected.active {
+    background-color: @hv;
+    text-color:       @black;
+}
+
+/* Redundant message block removed as it was empty and unused */
+
+/*
+button {
+    padding:          6px;
+    text-color:       @primary;
+    horizontal-align: 0.5;
+    background-color: @ug;
+    border-radius:    0px;
+}
+
+button selected {
+    background-color: @hv;
+    text-color:       @black;
+}
+*/
