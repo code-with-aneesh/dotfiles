@@ -19,6 +19,7 @@
     "memory",
     "battery",
     "tray",
+    "custom/yt-telegram",
     "custom/hyprpaper-next",
     "custom/power"
   ],
@@ -108,6 +109,15 @@
   // System tray
   "tray": {
     "spacing": 10
+  },
+
+  // YT-Telegram download bot status
+  "custom/yt-telegram": {
+    "format": "{}",
+    "exec": "/home/aneesh/coding/yt-telegram/scripts/yt-waybar",
+    "interval": 5,
+    "return-type": "json",
+    "on-click": "/home/aneesh/coding/yt-telegram/scripts/yt-rofi"
   },
 
   // Hyprpaper: random next wallpaper button

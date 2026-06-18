@@ -92,6 +92,7 @@ tooltip label {
 #tray,
 #custom-power,
 #custom-hyprpaper-next,
+#custom-yt-telegram,
 #window {
     padding: 2px 12px;
     margin: 4px 0px;
@@ -214,6 +215,27 @@ tooltip label {
     color: @mauve;
     background: @surface1;
     border-radius: 8px;
+}
+#custom-yt-telegram {
+    color: @subtext0;
+    background: transparent;
+    border-radius: 0;
+    margin: 0 0 0 8px;
+    padding: 2px 10px;
+    transition: color 0.2s;
+}
+#custom-yt-telegram:hover {
+    background: @surface1;
+    border-radius: 8px;
+}
+#custom-yt-telegram.pending {
+    color: @yellow;
+}
+#custom-yt-telegram.active {
+    color: @green;
+}
+#custom-yt-telegram.stopped {
+    color: @red;
 }
 #custom-power {
     color: @red;

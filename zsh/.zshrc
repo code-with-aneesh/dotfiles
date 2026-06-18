@@ -143,3 +143,8 @@ export PATH="/home/aneesh/.local/bin:$PATH"
 
 # opencode
 export PATH=/home/aneesh/.opencode/bin:$PATH
+
+dev() {
+    code .
+    opencode .
+}
