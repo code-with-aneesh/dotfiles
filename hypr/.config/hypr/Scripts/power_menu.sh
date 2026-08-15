@@ -6,6 +6,6 @@ case "$choice" in
   Reboot) systemctl reboot ;;
   Suspend) systemctl suspend ;;
   Lock) hyprlock ;;
-  "Exit Hyprland") hyprctl dispatch exit ;;
+  "Exit Hyprland") hyprctl dispatch 'hl.dsp.exit()' ;;
   *) exit 0 ;;
 esac

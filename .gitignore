@@ -2,3 +2,6 @@
 *.swp
 *.swo
 *~
+
+# Extracted AppImage junk
+squashfs-root/

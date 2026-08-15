@@ -21,4 +21,4 @@ if [[ $next -eq 0 ]]; then
     next=$(echo "$workspaces" | head -n1)
 fi
 
-hyprctl dispatch workspace "$next"
+hyprctl dispatch "hl.dsp.focus({ workspace = $next })"

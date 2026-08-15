@@ -20,7 +20,9 @@
     "battery",
     "tray",
     "custom/yt-telegram",
+    "custom/spotiflac",
     "custom/hyprpaper-next",
+    "custom/syncthing",
     "custom/power"
   ],
 
@@ -111,20 +113,40 @@
     "spacing": 10
   },
 
+  // SpotiFLAC API status monitor
+  "custom/spotiflac": {
+    "format": "{}",
+    "exec": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py",
+    "interval": 15,
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py --click"
+  },
+
   // YT-Telegram download bot status
   "custom/yt-telegram": {
     "format": "{}",
-    "exec": "/home/aneesh/coding/yt-telegram/scripts/yt-waybar",
+    "exec": "$HOME/coding/yt-telegram/scripts/yt-waybar",
     "interval": 5,
     "return-type": "json",
-    "on-click": "/home/aneesh/coding/yt-telegram/scripts/yt-rofi"
+    "on-click": "$HOME/coding/yt-telegram/scripts/yt-rofi"
+  },
+
+  // Syncthing toggle: start/stop and open web UI
+  "custom/syncthing": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/syncthing-status.sh",
+    "interval": 5,
+    "return-type": "json",
+    "tooltip": "Toggle Syncthing",
+    "on-click": "$HOME/.config/waybar/scripts/syncthing-toggle.sh"
   },
 
   // Hyprpaper: random next wallpaper button
   "custom/hyprpaper-next": {
     "format": "󰸉 ",
     "tooltip": "Change wallpaper",
-    "on-click": "/home/aneesh/.config/waybar/scripts/hyprpaper-random-next.sh"
+    "on-click": "$HOME/.config/hypr/Scripts/hyprpaper_random_next.sh"
   },
 
   // Custom power menu button
