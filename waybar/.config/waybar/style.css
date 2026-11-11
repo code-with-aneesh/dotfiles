@@ -156,14 +156,14 @@ tooltip label {
     font-weight: bold;
 }
 
-/* --- Elisa music popup --- */
+/* --- Media music popup --- */
 #custom-music {
     color: @mauve;
     background: @surface0;
     border-radius: 10px;
     padding-left: 12px;
     padding-right: 12px;
-    min-width: 120px;
+    min-width: 160px;
 }
 
 #custom-music:hover {

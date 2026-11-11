@@ -56,11 +56,13 @@
   "custom/music": {
     "format": "{}",
     "exec": "$HOME/.config/waybar/scripts/music-status.sh",
-    "interval": 2,
+    "interval": 1,
     "return-type": "json",
+    "escape": true,
+    "max-length": 32,
     "tooltip": true,
     "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/music_menu.xml",
+    "menu-file": "/home/aneesh/.config/waybar/music_menu.xml",
     "menu-actions": {
       "previous": "playerctl -p elisa previous",
       "play-pause": "playerctl -p elisa play-pause",
