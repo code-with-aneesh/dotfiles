@@ -13,6 +13,7 @@ hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + A",            hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + W",      hl.dsp.exec_cmd("systemsettings kcm_networkmanagement"))
 hl.bind(mainMod .. " + B",      hl.dsp.exec_cmd("systemsettings kcm_bluetooth"))
+hl.bind(mainMod .. " + K",      hl.dsp.exec_cmd("~/.config/hypr/Scripts/opencode-calendar.sh"))
 
 -- Window management
 -- was: killactive / togglefloating / layoutmsg, togglesplit
@@ -66,6 +67,7 @@ hl.bind("SHIFT + Print",   hl.dsp.exec_cmd("~/.config/hypr/Scripts/screenshot_to
 -- Wallpaper
 -- was: bind = $mainMod, R, exec, ...
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/Scripts/hyprpaper_random_next.sh"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/hypr/Scripts/hyprpaper_random_wallpapers.sh"))
 
 -- Clipboard
 -- was: # bind = $mainMod, Y, exec, ...

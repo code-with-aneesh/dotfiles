@@ -37,9 +37,7 @@ selected="$(shuffile)"
 
 # Preload then set the wallpaper for all monitors
 if command -v hyprctl >/dev/null 2>&1; then
-  hyprctl hyprpaper preload "$selected" || true
-  # set for all monitors (empty monitor means all)
-  hyprctl hyprpaper wallpaper "",$selected || hyprctl hyprpaper wallpaper "$selected" || true
+  hyprctl hyprpaper wallpaper ",$selected" || true
   notify-send "Hyprpaper" "Wallpaper set: $(basename "$selected")" || true
 else
   notify-send "Hyprpaper" "hyprctl not found" || true
