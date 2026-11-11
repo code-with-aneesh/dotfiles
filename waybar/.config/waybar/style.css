@@ -9,7 +9,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "FiraCode Nerd Font";
+    font-family: "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "Fira Code", "Font Awesome 6 Free", monospace;
     font-weight: 500;
     font-size: 13px;
     min-height: 0;
@@ -95,6 +95,7 @@ tooltip label {
 #custom-syncthing,
 #custom-yt-telegram,
 #custom-spotiflac,
+#custom-music,
 #window {
     padding: 2px 12px;
     margin: 4px 0px;
@@ -153,6 +154,20 @@ tooltip label {
     background: @surface0;
     border-radius: 10px;
     font-weight: bold;
+}
+
+/* --- Elisa music popup --- */
+#custom-music {
+    color: @mauve;
+    background: @surface0;
+    border-radius: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    min-width: 120px;
+}
+
+#custom-music:hover {
+    background: @surface1;
 }
 
 /* --- System Modules (Right) --- */

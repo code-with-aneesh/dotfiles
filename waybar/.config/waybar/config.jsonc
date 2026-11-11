@@ -10,7 +10,8 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "custom/music"
   ],
   "modules-right": [
     "pulseaudio",
@@ -51,6 +52,24 @@
     "max-length": 35
   },
 
+  // Elisa playback popup
+  "custom/music": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/music-status.sh",
+    "interval": 2,
+    "return-type": "json",
+    "tooltip": true,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/music_menu.xml",
+    "menu-actions": {
+      "previous": "playerctl -p elisa previous",
+      "play-pause": "playerctl -p elisa play-pause",
+      "next": "playerctl -p elisa next",
+      "seek-back": "playerctl -p elisa position 5-",
+      "seek-forward": "playerctl -p elisa position 5+"
+    }
+  },
+
   // Clock module
   "clock": {
     "format": "{:%a %d, %I:%M %p}", // e.g., Sun 05, 11:50 AM
@@ -76,9 +95,9 @@
 
   // Network information
   "network": {
-    "format-wifi": "{essid} ",
+    "format-wifi": "{essid} 󰖩",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "format-disconnected": "Disconnected ⚠",
     "on-click": "nmtui"
   },

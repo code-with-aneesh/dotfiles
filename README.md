@@ -76,7 +76,7 @@ Dotfiles/
 ## Features
 
 - **Modular config** — hyprland.conf sources separate files per concern
-- **Waybar** — grouped right modules (audio, network, CPU, memory, battery) with a unified `surface0` background and rounded edges, plus a GTK power menu
+- **Waybar** — grouped system modules, an Elisa playback popup with seek controls, and a GTK power menu
 - **Rofi** — vim-like keybindings (Ctrl+h/j/k/l), Catppuccin Mocha theme (bundled)
 - **Hyprpaper** — random wallpaper from `~/Pictures/catppuccin-wallpapers` on startup
 - **Clipboard** — cliphist with clipboard manager
@@ -104,7 +104,7 @@ stow -d ~/Dotfiles -t ~ -R hypr
 
 ## Dependencies
 
-- Hyprland, Waybar, Rofi, Kitty, Ghostty
+- Hyprland, Waybar, Rofi, Kitty, Ghostty, playerctl
 - Oh My Zsh, Powerlevel10k, zoxide, fzf
 - Hyprpaper, Cliphist, Dunst
 - Papirus-Dark icon theme
