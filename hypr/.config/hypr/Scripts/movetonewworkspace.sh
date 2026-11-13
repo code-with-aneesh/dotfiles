@@ -1,10 +1,15 @@
 #!/bin/bash
 # ~/.config/hypr/Scripts/movetonewworkspace.sh
 
-# Get highest current workspace ID
-max_ws=$(hyprctl workspaces -j | jq "[.[].id] | max // 0")
-next_ws=$((max_ws + 1))
+reserved=(9)
 
-# Move active window to new workspace and switch
+used=$(hyprctl workspaces -j | jq -r '[.[].id] | join(" ")')
+
+next_ws=2
+while [[ " $used " == *" $next_ws "* ]] || [[ " ${reserved[*]} " == *" $next_ws "* ]]; do
+    next_ws=$((next_ws + 1))
+done
+
+# Move active window to the next free workspace and switch
 hyprctl dispatch "hl.dsp.window.move({ workspace = $next_ws })"
 hyprctl dispatch "hl.dsp.focus({ workspace = $next_ws })"

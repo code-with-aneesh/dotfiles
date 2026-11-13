@@ -46,6 +46,7 @@ Dotfiles/
 ├── rofi/        → ~/.config/rofi/
 │   ├── config.rasi          # Config + vim bindings
 │   ├── catppuccin-mocha.rasi # Theme (bundled)
+├── local/       → ~/.local/share/applications/
 └── zsh/         → ~/.zshrc, ~/.p10k.zsh
 ```
 
@@ -97,9 +98,10 @@ stow -d ~/Dotfiles -t ~ waybar
 stow -d ~/Dotfiles -t ~ rofi
 stow -d ~/Dotfiles -t ~ ghostty
 stow -d ~/Dotfiles -t ~ zsh
+stow -d ~/Dotfiles -t ~ local
 
 # Restow after changes
-stow -d ~/Dotfiles -t ~ -R hypr
+stow -d ~/Dotfiles -t ~ -R hypr kitty waybar rofi ghostty zsh local
 ```
 
 ## Dependencies

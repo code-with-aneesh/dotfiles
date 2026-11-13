@@ -91,10 +91,10 @@ tooltip label {
 #pulseaudio,
 #tray,
 #custom-power,
-#custom-hyprpaper-next,
-#custom-syncthing,
-#custom-yt-telegram,
-#custom-spotiflac,
+    #custom-hyprpaper-next,
+    #custom-syncthing,
+    /* #custom-yt-telegram, */
+    /* #custom-spotiflac, */
 #custom-music,
 #window {
     padding: 2px 12px;
@@ -233,7 +233,7 @@ tooltip label {
     background: @surface1;
     border-radius: 8px;
 }
-#custom-yt-telegram {
+/* #custom-yt-telegram {
     color: @subtext0;
     background: transparent;
     border-radius: 0;
@@ -253,8 +253,8 @@ tooltip label {
 }
 #custom-yt-telegram.stopped {
     color: @red;
-}
-#custom-spotiflac {
+} */
+/* #custom-spotiflac {
     color: @subtext0;
     background: transparent;
     border-radius: 0;
@@ -274,7 +274,7 @@ tooltip label {
 }
 #custom-spotiflac.mixed {
     color: @peach;
-}
+} */
 #custom-syncthing {
     background: transparent;
     border-radius: 0;

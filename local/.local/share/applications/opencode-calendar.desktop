@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=OpenCode Calendar
+Comment=OpenCode with Calendar session
+Exec=/home/aneesh/.config/hypr/Scripts/opencode-calendar.sh
+Terminal=false
+Type=Application
+Icon=calendar
+Categories=Development;
+StartupNotify=true

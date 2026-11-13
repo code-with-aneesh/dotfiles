@@ -20,8 +20,8 @@
     "memory",
     "battery",
     "tray",
-    "custom/yt-telegram",
-    "custom/spotiflac",
+    // "custom/yt-telegram",
+    // "custom/spotiflac",
     "custom/hyprpaper-next",
     "custom/syncthing",
     "custom/power"
@@ -64,12 +64,13 @@
     "menu": "on-click",
     "menu-file": "/home/aneesh/.config/waybar/music_menu.xml",
     "menu-actions": {
-      "previous": "playerctl -p elisa previous",
-      "play-pause": "playerctl -p elisa play-pause",
-      "next": "playerctl -p elisa next",
-      "seek-back": "playerctl -p elisa position 5-",
-      "seek-forward": "playerctl -p elisa position 5+"
-    }
+      "previous": "playerctl previous",
+      "play-pause": "playerctl play-pause",
+      "next": "playerctl next",
+      "seek-back": "playerctl position 5-",
+      "seek-forward": "playerctl position 5+"
+    },
+    "on-click-right": "$HOME/.config/waybar/scripts/elisa-toggle.sh"
   },
 
   // Clock module
@@ -135,23 +136,23 @@
   },
 
   // SpotiFLAC API status monitor
-  "custom/spotiflac": {
-    "format": "{}",
-    "exec": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py",
-    "interval": 15,
-    "return-type": "json",
-    "tooltip": true,
-    "on-click": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py --click"
-  },
+  // "custom/spotiflac": {
+  //   "format": "{}",
+  //   "exec": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py",
+  //   "interval": 15,
+  //   "return-type": "json",
+  //   "tooltip": true,
+  //   "on-click": "python3 /home/aneesh/coding/spotiflac-monitor/scripts/waybar_status.py --click"
+  // },
 
   // YT-Telegram download bot status
-  "custom/yt-telegram": {
-    "format": "{}",
-    "exec": "$HOME/coding/yt-telegram/scripts/yt-waybar",
-    "interval": 5,
-    "return-type": "json",
-    "on-click": "$HOME/coding/yt-telegram/scripts/yt-rofi"
-  },
+  // "custom/yt-telegram": {
+  //   "format": "{}",
+  //   "exec": "$HOME/coding/yt-telegram/scripts/yt-waybar",
+  //   "interval": 5,
+  //   "return-type": "json",
+  //   "on-click": "$HOME/coding/yt-telegram/scripts/yt-rofi"
+  // },
 
   // Syncthing toggle: start/stop and open web UI
   "custom/syncthing": {
